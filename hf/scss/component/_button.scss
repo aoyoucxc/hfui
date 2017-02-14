@@ -2,188 +2,69 @@
 /* ==========================================================================
    Component: Button
  ============================================================================ */
+// 每个变量都有三个颜色值，分别为：文本色，背景色，边框色
+$btnDft:                                $black $grayLight $grayLight !default;
+$btnPrimary:                            $primaryColor !default;
+$btnInfo:                               $infoColor !default;
+$btnSuccess:                            $successColor !default;
+$btnDanger:                             $dangerColor !default;
+$btnWarning:                            $warningColor !default;
+$buttonSubjects:                        ("-default":$btnDft,"-primary":$btnPrimary,"-info":$btnInfo,"-danger":$btnDanger,"-success":$btnSuccess,"-warning":$btnWarning) !default;
+$buttonItems:                           ".active",":active",".focus",":focus",":hover",".hover" !default;
 
 // 按钮颜色
 .hf-link {
   cursor: pointer;
-  /*-webkit-transition: background-color,.5s;
-     transition: background-color,.5s;*/
-  color: #333333;
+  color: $linkColor;
+  &:hover,&:active {
+    text-decoration: none;
+    color: $linkColor;
+  }
 }
-
-.hf-link:hover {
-  text-decoration: none;
-  color: #333333;
-}
-
-.hf-link:active {
-  text-decoration: none;
-  color: #333333;
-}
-
 .hf-btn {
-  font-size: .78rem;
   border-radius: 0;
-  border: 1px solid #DDDDDD;
-}
-.hf-btn-radius{
-  border-radius: 6px;
+  font-size: .78rem;
 
-}
-.hf-btn-sm{
-  font-size: .74rem!important;
-  padding:.2rem .8rem!important;
-}
-
-.hf-btn:hover,
-.hf-btn:focus,
-.hf-btn:active {
-  background-color: #FFFFFF;
+  &-radius{
+    border-radius: 6px;
+  }
+  &-sm{
+    font-size: .74rem!important;
+    padding:.2rem .8rem!important;
+  }
 }
 
-.hf-btn-primary {
-  color: #FFFFFF;
-  background-color: #0099CC;
-  border: 1px solid #0099CC;
+@each $key,$value in $buttonSubjects {
+  .hf-btn#{$key} {
+    color: nth($value,1);
+    background-color: nth($value,2);
+    border: 1px solid nth($value,3);
+    &.hf-link {
+      color: nth($value,2);
+      background-color:transparent;
+      border:none;
+    }
+  }
+  @each $item in $buttonItems {
+    .hf-btn#{$key}#{$item} {
+      color: $white;
+      background-color: darken(nth($value,2),8%);
+      border-color: darken(nth($value,3),8%);
+      &.hf-link {
+        color:darken(nth($value,2),8%);
+        background-color:transparent;
+        border:none;
+      }
+    }
+  }
+  .hf-btn-default:hover{
+    color:$black;
+  }
+  .hf-btn.disabled,
+  .hf-btn[disabled],
+  fieldset[disabled] .hf-btn{
+    color: lighten(nth($value,1),30%);
+    background-color: lighten(nth($value,2),30%);
+    border-color: lighten(nth($value,3),30%);
+  }
 }
-
-.hf-btn-primary:hover,
-.hf-btn-primary:focus,
-.hf-btn-primary:active {
-  color: #FFFFFF;
-  background-color: #4387BF;
-  border: 1px solid #4387BF;
-}
-
-.hf-btn-info {
-  color: #FFFFFF;
-  background-color: #5bc0de;
-  border: 1px solid #5bc0de;
-}
-
-.hf-btn-info:hover,
-.hf-btn-info:focus,
-.hf-btn-info:active {
-  color: #FFFFFF;
-  background-color: #31b0d5;
-  border: 1px solid #31b0d5;
-}
-
-.hf-btn-success {
-  color: #FFFFFF;
-  background-color: #5cb85c;
-  border: 1px solid #5cb85c;
-}
-
-.hf-btn-success:hover,
-.hf-btn-success:focus,
-.hf-btn-success:active {
-  color: #FFFFFF;
-  background-color: #449d44;
-  border: 1px solid #449d44;
-}
-
-.hf-btn-warning {
-  color: #FFFFFF;
-  background-color: #f0ad4e;
-  border: 1px solid #f0ad4e;
-}
-
-.hf-btn-warning:hover,
-.hf-btn-warning:focus,
-.hf-btn-warning:active {
-  color: #FFFFFF;
-  background-color: #ec971f;
-  border: 1px solid #ec971f;
-}
-
-.hf-btn-danger {
-  color: #FFFFFF;
-  background-color: #d9534f;
-  border: 1px solid #d9534f;
-}
-
-.hf-btn-danger:hover,
-.hf-btn-danger:focus,
-.hf-btn-danger:active {
-  color: #FFFFFF;
-  background-color: #c9302c;
-  border: 1px solid #c9302c;
-}
-
-.hf-icon {
-  width: 1.2em;
-  height: 1.2em;
-}
-
-
-//$btnDftColor:$primary !default;
-//$btnDftBgColor:$white !default;
-//$btnDftBorderColor:$primary !default;
-//$btnActiveColor:$white !default;
-//$btnActiveBgColor:$primary !default;
-//$btnActiveBorderColor:$primary !default;
-//$btnDisabledColor:$primary !default;
-//$btnDisabledBgColor:darken($white,30%) !default;
-//$btnDisabledBorderColor:$primary !default;
-//
-//$btnDftRadius:$baseRadius !default;
-//
-//$buttonItems: "",".active",":active",".focus",":focus",":hover",".hover" !default;
-//
-//%active-button {
-//  color: $btnActiveColor;
-//  background-color: $btnActiveBgColor;
-//  border-color: $btnActiveBorderColor;
-//}
-//%disabled-button {
-//  color: $btnDisabledColor;
-//  background-color: $btnDisabledBgColor;
-//  border-color: $btnDisabledBorderColor;
-//}
-//
-//.hf-link {
-//  cursor: pointer;
-//  transition: background-color,.5s;
-//  &:hover {
-//    text-decoration: none;
-//  }
-//}
-//.hf-btn {
-//  color: $btnDftColor;
-//  background-color: $btnDftBgColor;
-//  border-color: $btnDftBorderColor;
-//  border-radius: 0;
-//}
-//@each $item in $buttonItems {
-//  @if str_length($item) > 0 {
-//    .hf-btn#{$item} {
-//      @extend %active-button;
-//    }
-//    @if str-index($item, active) == null {
-//      .hf-btn:active#{$item} {
-//        @extend %active-button;
-//      }
-//      .hf-btn.active#{$item} {
-//        @extend %active-button;
-//      }
-//    }
-//  }
-//  .open > .dropdown-toggle.hf-btn#{$item}{
-//    @extend %active-button;
-//  }
-//  .hf-btn.disabled#{$item},
-//  .hf-btn[disabled]#{$item},
-//  fieldset[disabled] .hf-btn#{$item}{
-//    @extend %disabled-button;
-//  }
-//}
-//.hf-btn:active,
-//.hf-btn.active,
-//.open > .dropdown-toggle.hf-btn {
-//  background-image: none;
-//}
-//.btn-default .badge {
-//  color: #fff;
-//  background-color:#FFFFFF;;
-//}

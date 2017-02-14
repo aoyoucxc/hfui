@@ -47,6 +47,7 @@ $yellow:                #ffc40d !default;
 $pink:                  #c3325f !default;
 $purple:                #7a43b6 !default;
 $primary:               $blueDark !default;//主色
+$lightprimary:          $blue !default;
 $success:               $green !default;
 $info:                  $blue !default;
 $muted:                 $gray !default;
@@ -82,10 +83,11 @@ $placeholder:           true $gray !default;
 // 警告，错误，成功，提示
 //-----------------------------------------------------
 // 每个变量都有三个颜色值，分别为：文本色，背景色，边框色
-$warningColor:               $warning #FFF6BF #FFD324 !default;
-$dangerColor:                $danger #FBE3E4 #FBC2C4 !default;
-$successColor:               $success #E6EFC2 #C6D880 !default;
-$infoColor:                  $info #D5EDF8 #92CAE4 !default;
+$warningColor:               $white $warning $warning !default;
+$dangerColor:                $white $danger $danger !default;
+$successColor:               $white $success $success !default;
+$infoColor:                  $white $lightinfo $lightinfo !default;
+$primaryColor:               $white $lightprimary $lightprimary !default;
 
 
 // radius
