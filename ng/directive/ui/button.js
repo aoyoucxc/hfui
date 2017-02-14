@@ -33,7 +33,6 @@
                 link = function($scope,$e,$attrs){
                     $scope.icon = $scope.icon + "" === "true";
                     $scope.text = $scope.text + "" !== "false";
-                    console.log($scope.icon)
                 }
                 ;
             return {
@@ -43,12 +42,11 @@
                 replace:                    replace,
                 link:                       link
             };
-        }
+        };
     };
 
     m .directive("hfBtn",["_hf","$state",function(_hf,$state){
-            var scope = baseScope,
-                replace = true,
+            var replace = true,
                 transclude = true,
                 template = '<button ng-class="{\'btn\':!link,\'hf-btn\':!link,\'hf-link\':link}" ' +
                     'ng-transclude></button>',
@@ -89,7 +87,7 @@
             ;
             return {
                 restrict:               "E",
-                scope:                  scope,
+                scope:                  baseScope,
                 transclude:             transclude,
                 template:               template,
                 replace:                replace,
