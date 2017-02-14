@@ -1,0 +1,27 @@
+@charset "UTF-8";
+/* ==========================================================================
+   Component: Breadcrumb
+ ============================================================================ */
+.hf-breadcrumb {
+  padding: .7em .5em;
+  margin-bottom: 0;
+  list-style: none;
+  background-color: transparent;
+  border-radius: 0;
+  font-size: 85%;
+  > li {
+    display: inline-block;
+    [class*="fa-"]:before {
+      color: #999999;
+      margin-right: 5px;
+    }
+    + li:before {
+      content: "/\00a0";
+      padding: 0 8px;
+      color: #ccc;
+    }
+  }
+  .hf-active {
+    color: #999999;
+  }
+}

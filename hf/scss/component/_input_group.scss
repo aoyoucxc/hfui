@@ -1,0 +1,104 @@
+@charset "UTF-8";
+/* ==========================================================================
+   Component: Input group
+ ============================================================================ */
+.hf-input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+  .hf-form-field {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
+  }
+  &-label,
+  &-btn,
+  .hf-form-field {
+    display: table-cell;
+  }
+  &-label:not(:first-child):not(:last-child),
+  &-btn:not(:first-child):not(:last-child),
+  .hf-form-field:not(:first-child):not(:last-child) {
+    border-radius: $noneRadius;
+  }
+  &-label,
+  &-btn {
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+  &-label {
+    height: 2.125rem;
+    padding: 0 .7em 0 .7em;
+    font-weight: normal;
+    line-height: 2rem;
+    color: #555555;
+    text-align: center;
+    background-color: #eeeeee;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    input[type="radio"],input[type="checkbox"] {
+      margin-top: 0;
+    }
+  }
+  .hf-form-field:first-child,
+  &-label:first-child,
+  &-btn:first-child > .btn,
+  &-btn:first-child > .hf-btn-group > .btn,
+  &-btn:first-child > .hf-dropdown-toggle,
+  &-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+  &-btn:last-child > .hf-btn-group:not(:last-child) > .btn {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+  &-label:first-child {
+    border-right: 0;
+  }
+  .hf-form-field:last-child,
+  &-label:last-child,
+  &-btn:last-child > .btn,
+  &-btn:last-child > .hf-btn-group > .btn,
+  &-btn:last-child > .hf-dropdown-toggle,
+  &-btn:first-child > .btn:not(:first-child),
+  &-btn:first-child > .hf-btn-group:not(:first-child) > .btn {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+  &-label:last-child {
+    border-left: 0;
+  }
+  &-btn {
+    position: relative;
+    font-size: 0;
+    white-space: nowrap;
+    > .btn {
+      position: relative;
+      border-color: #ccc;
+      + .btn {
+        margin-left: -1px;
+      }
+      &:hover,
+      &:focus,
+      &:active {
+        z-index: 2;
+      }
+    }
+    &:first-child {
+      > .btn,> .hf-btn-group {
+        margin-right: -2px;
+      }
+    }
+    &:last-child {
+      > .btn,> .hf-btn-group {
+        margin-left: -1px;
+      }
+    }
+  }
+  .hf-form-field,
+  &-btn > .btn {
+    height: 2.125rem;
+    padding-bottom: auto;
+  }
+}

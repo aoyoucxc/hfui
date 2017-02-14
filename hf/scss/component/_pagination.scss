@@ -1,0 +1,71 @@
+@charset "UTF-8";
+/* ==========================================================================
+   Component: Pagination
+ ============================================================================ */
+// 分页容器上下mr
+$paginationWrapMargin:                                                      0 20px !default;
+// 分页主体颜色
+$paginationColor:                                                           $blue !default;
+// 分页边框大小
+$paginationBorderSize:                                                      1px !default;
+// 分页边框类型
+$paginationBorderType:                                                      solid !default;
+// 分页的背景色
+$paginationBg:                                                              $white !default;
+// 分页的左右内边距
+$paginationPdLf:                                                            12px !default;
+// 分页的内边距
+$paginationPadding:                                                         5px $paginationPdLf + 8 5px $paginationPdLf !default;
+// 颜色相差比
+$paginationColorRate:                                                       .5 !default;
+// 边框颜色
+$paginationBdCr:                                                            $bdColor !default;
+
+.hf-pagination {
+  &-wrap {
+    margin: $paginationWrapMargin;
+  }
+  &-center {
+    text-align: center;
+  }
+  &-right {
+    text-align: right;
+  }
+  &-box {
+    display: inline-block;
+    margin: auto;
+  }
+  &-item {
+    display: inline-block;
+    padding: $paginationPadding;
+    border: $paginationBorderSize $paginationBorderType $paginationBdCr;
+    color: $paginationColor;
+    background-color: $paginationBg;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 0 - $paginationPdLf;
+    transition: background-color 1s ease,color 1s,border-color 1s;
+    &:hover {
+      text-decoration: none;
+      background-color: lighten($paginationColor,$paginationColorRate);
+      color:$paginationBg;
+      border-color: lighten($paginationColor,$paginationColorRate);
+    }
+  }
+  &-active {
+    background-color: lighten($paginationColor,$paginationColorRate);
+    color:$paginationBg;
+    border-color: lighten($paginationColor,$paginationColorRate);
+  }
+  &-disable {
+    border-color:$paginationBdCr;
+    color: lighten($paginationColor,$paginationColorRate);
+    cursor: not-allowed;
+    &:hover{
+      background-color: #fff;
+      border-color: $paginationBdCr;
+      color: lighten($paginationColor,$paginationColorRate);
+    }
+  }
+}
+

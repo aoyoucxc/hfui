@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/* ==========================================================================
+   Component: label
+ ============================================================================ */
+$labelItems: (
+        loan:               #5bc0de,
+        loansure:           #48729F,
+        applied:            #337ab7,
+        loaning:            #19C095,
+        revocation:         #808080,
+        refuse:             #879DC4,
+        approve:            #A3C17E,
+        refunding:          #6495ED,
+        cleared:            #68A1AF,
+        refund:             #48729F
+) !default;
+@each $key,$value in $labelItems {
+  .hf-label-#{$key} {
+    color: $white;
+    background-color: $value;
+    &[href]:hover,&[href]:focus {
+      background-color: darken($value,30%);
+    }
+  }
+}
+

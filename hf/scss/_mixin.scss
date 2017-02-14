@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+@mixin size($prefix,$rate,$number,$properties){
+  $sizeCount : $number / 2;
+  @for $i from 1 through $sizeCount {
+    $sizeTmp1:s;
+    $sizeTmp2:l;
+    @for $j from 1 through $i {
+      $sizeTmp1: x + $sizeTmp1;
+      $sizeTmp2: x + $sizeTmp2;
+    }
+    #{$prefix}-#{$sizeTmp1} {
+      @each $key,$value in $properties {
+        #{$key} : $value * ( 1 - $rate ) ;
+      }
+    }
+    #{$prefix}-#{$sizeTmp2} {
+      @each $key,$value in $properties {
+        #{$key} : $value * ( 1 + $rate ) ;
+      }
+    }
+  }
+}
+
+@mixin clear($clazz) {
+  #{$clazz}:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+/* 按display:table清除浮动 */
+@mixin clearByTable($clazz) {
+  #{$clazz}:before ,
+  #{$clazz}:after  {
+    content: " ";
+    display: table;
+  }
+  #{$clazz}:after {
+    clear: both;
+  }
+}
+
+/* 清除内外边距 */
+@mixin clearSpace(){
+  margin: 0;
+  padding: 0;
+}
+
+@mixin textEllipsis (){
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

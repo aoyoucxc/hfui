@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/* ==========================================================================
+   Component: Navtabs
+ ============================================================================ */
+.hf-navtabs> li> a {
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 0;
+}
+
+.hf-navtabs> li> a:hover {
+  border-color: #eee #eee #ddd;
+}
+
+.hf-navtabs> li.active> a,
+.hf-navtabs> li.active> a:hover,
+.hf-navtabs> li.active> a:focus {
+  color: #555;
+  cursor: default;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+  border-top: 2px solid #0099CC;
+}

@@ -1,0 +1,122 @@
+@charset "UTF-8";
+/* ==========================================================================
+   Component: Rightsidebar
+ ============================================================================ */
+.hf-rightside {
+  position: fixed;
+  height: 100%;
+  width: 50px;
+  background: rgba(0,0,0,0);
+  z-index: 999;
+  right: 0;
+  top:0;
+  &:hover .hf-rightsidebar {
+    right: 0;
+  }
+}
+.hf-rightsidebar {
+  position: fixed;
+  z-index: 999;
+  right: -60px;
+  bottom: 16.7%;
+  width: 55px;
+  height: 250px;
+  border-radius: 5px;
+  font-size: 13px;
+  text-align: center;
+  background: #E5E5E5;
+  line-height: 15px;
+  word-wrap: break-word;
+  padding: 3px 3px;
+  list-style: outside none none;
+  -webkit-transition: right 1s;
+  transition: right 1s;
+  a{
+    text-decoration: none;
+    color: #696969;
+    height: 15px;
+    font-size: 12px;
+    outline: medium none;
+    -webkit-transition: color 0.5s;
+    transition: color 0.5s;
+    &:hover{
+      color: #BB4210;
+      -webkit-transition: color 0.5s;
+      transition: color 0.5s;
+    }
+  }
+  span{
+    font-size: 25px;
+    color: #959595;
+    -webkit-transition: color 0.5s;
+    transition: color 0.5s;
+    &:hover{
+      color: #4DAFEA;
+      -webkit-transition: color 0.5s;
+      transition: color 0.5s;
+    }
+  }
+}
+
+
+
+
+//.hf-rightside {
+//  position: fixed;
+//  height: 100%;
+//  width: 50px;
+//  background: rgba(0,0,0,0);
+//  z-index: 999;
+//  right: 0;
+//  top:0;
+//}
+//.hf-rightside:hover .hf-rightsidebar {
+//  right: 0;
+//}
+//.hf-rightsidebar {
+//  position: fixed;
+//  z-index: 999;
+//  right: -60px;
+//  bottom: 16.7%;
+//  width: 55px;
+//  height: 250px;
+//  border-radius: 5px;
+//  font-size: 13px;
+//  text-align: center;
+//  background: #E5E5E5;
+//  line-height: 15px;
+//  word-wrap: break-word;
+//  padding: 3px 3px;
+//  list-style: outside none none;
+//  -webkit-transition: right 1s;
+//  transition: right 1s;
+//}
+//.hf-rightsidebar a {
+//  text-decoration: none;
+//  color: #696969;
+//  height: 15px;
+//  font-size: 12px;
+//  outline: medium none;
+//  -webkit-transition: color 0.5s;
+//  transition: color 0.5s;
+//}
+//.hf-rightsidebar a:hover {
+//  color: #BB4210;
+//  -webkit-transition: color 0.5s;
+//  transition: color 0.5s;
+//}
+//.hf-rightsidebar span {
+//  font-size: 25px;
+//  color: #959595;
+//  -webkit-transition: color 0.5s;
+//  transition: color 0.5s;
+//}
+//.hf-rightsidebar span:hover {
+//  color: #4DAFEA;
+//  -webkit-transition: color 0.5s;
+//  transition: color 0.5s;
+//}
+//.hf-rightsidebar-top {
+//}
+//.hf-rightsidebar-bottom {
+//}

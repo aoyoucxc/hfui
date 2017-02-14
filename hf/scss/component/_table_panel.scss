@@ -1,0 +1,111 @@
+@charset "UTF-8";
+/* ==========================================================================
+   Component: Table Panel
+ ============================================================================ */
+.hf-table-panel {
+  caption{
+    padding-top: 0;
+  }
+  &-btngroup {
+    margin-bottom: .4rem;
+    &:after{
+      content: '';
+      display: block;
+      clear: both;
+    }
+    .btn-toolbar,
+    .btn-group {
+      float: left;
+      .hf-right{
+        float: right;
+      }
+    }
+  }
+  .fa {
+    width: 1rem;
+  }
+  &-footer{
+    text-align: left;
+    font-size: .7rem;
+  }
+  &-searsh {
+    form legend{
+      font-size: .9rem;
+      border-bottom: none;
+      padding-left: 1.5rem;
+      margin-bottom: 0;
+      .label {
+        font-weight: 500;
+        letter-spacing: .1rem;
+      }
+    }
+    .hf-form-group {
+      margin-bottom: 1rem;
+    }
+    .hf-close {
+      color: #fff;
+      cursor: pointer;
+    }
+    &:after{
+      content: '';
+      display: block;
+      clear: both;
+    }
+    .hf-form-layout-btns > * {
+      float: right;
+      &:nth-child(2) {
+        display: inline-block;
+        margin: auto;
+        text-align: center;
+        > button,
+        > .btn,
+        > .hf-btn {
+          float: none;
+        }
+      }
+    }
+  }
+  & + .hf-pagination-wrap {
+    margin-top: 10px;
+  }
+}
+//.hf-panel-width {
+//  border: 1px dotted #ccc;
+//  border-top: none;
+//  margin-bottom: .3rem;
+//  padding-top: .3rem;
+//  padding-bottom: .3rem;
+//}
+
+.hf-tablepanel{
+  border:1px solid #DDDDDD;
+}
+.hf-tablepanel-hd{
+  padding:12px;
+  margin: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  position: relative;
+  font-size: .8rem;
+  background: #F8F8F8;
+  border-top: 0;
+  border-bottom: 1px solid #ddd;
+  .hf-form-inline{
+    float:right;
+  }
+}
+.hf-tablepanel-table{
+  .hf-table{
+    border-top:1px solid #dddddd;
+    border-bottom:1px solid #dddddd;
+  }
+}
+.hf-tablepanel-foot{
+  border-top:1px solid #DDDDDD;
+  margin-top:2.5rem;
+  background: #F8F8F8;
+  padding:.3rem 0;
+}
+
+
+

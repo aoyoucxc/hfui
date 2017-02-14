@@ -1,0 +1,209 @@
+@charset "UTF-8";
+/* ==========================================================================
+   Component: Message
+ ============================================================================ */
+.hf-msg {
+}
+.hf-msg-btn-tools {
+  padding-bottom: .5rem;
+  text-align: right;
+   .btn:not(:last-child),
+    .hf-btn:not(:last-child),
+     button:not(:last-child){
+      margin-right: 10px;
+  }
+   .hf-full-center{
+    text-align: center;
+  }
+   .hf-full-side{
+      .btn:nth-of-type(odd),
+      .hf-btn:nth-of-type(odd),
+       button:nth-of-type(odd){
+         float: left;
+    }
+     .btn:nth-of-type(even),
+     .hf-btn:nth-of-type(even),
+     button:nth-of-type(even){
+      float: right;
+    }
+     .btn:nth-of-type(2),
+     .hf-btn:nth-of-type(2),
+      button:nth-of-type(2){
+      margin-right: 0;
+    }
+  }
+    .hf-full-side:after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+%megtable{
+  padding: .8rem;
+}
+.hf-msg-table {
+    > thead> tr,
+    > tbody> tr,
+    > tfoot> tr{
+      >th{
+      @extend %megtable;
+    }
+  }
+    > thead> tr,
+    > tbody> tr,
+    > tfoot> tr{
+      >td{
+      @extend %megtable;
+    }
+  }
+  a{
+    cursor: pointer;
+    &:hover{
+      text-decoration:none;
+    }
+  }
+}
+.hf-msg-detail {
+  padding: 0;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  &-hd,&-bd,&-footer{
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  &-hd{
+    border-bottom: 1px solid #ccc;
+  }
+  &-title{
+    margin-bottom: 0rem;
+  }
+  &-meta{
+    text-align: right;
+    color: #ccc;
+    margin-bottom:.2rem;
+      >*{
+      margin-left: 1rem;
+    }
+      > .fa + *{
+      margin-left: .2rem;
+    }
+  }
+  &-bd{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    p{
+      line-height: 1.7rem;
+      letter-spacing: .05rem;
+    }
+  }
+  &-footer{
+    font-size: .7rem;
+    padding-bottom: .5rem;
+  }
+}
+.hf-msg-form {
+  padding-top: 2rem;
+}
+
+
+
+
+//.hf-msg {
+//}
+//.hf-msg-btn-tools {
+//  padding-bottom: .5rem;
+//  text-align: right;
+//}
+//.hf-msg-btn-tools .btn:not(:last-child),
+//.hf-msg-btn-tools .hf-btn:not(:last-child),
+//.hf-msg-btn-tools button:not(:last-child) {
+//  margin-right: 10px;
+//}
+//.hf-msg-btn-tools.hf-full-center{
+//  text-align: center;
+//}
+//.hf-msg-btn-tools.hf-full-side:after {
+//  content: '';
+//  display: block;
+//  clear: both;
+//}
+//.hf-msg-btn-tools.hf-full-side .btn,
+//.hf-msg-btn-tools.hf-full-side .hf-btn,
+//.hf-msg-btn-tools.hf-full-side button {
+//
+//}
+//.hf-msg-btn-tools.hf-full-side .btn:nth-of-type(odd),
+//.hf-msg-btn-tools.hf-full-side .hf-btn:nth-of-type(odd),
+//.hf-msg-btn-tools.hf-full-side button:nth-of-type(odd) {
+//  float: left;
+//}
+//.hf-msg-btn-tools.hf-full-side .btn:nth-of-type(even),
+//.hf-msg-btn-tools.hf-full-side .hf-btn:nth-of-type(even),
+//.hf-msg-btn-tools.hf-full-side button:nth-of-type(even) {
+//  float: right;
+//}
+//.hf-msg-btn-tools.hf-full-side .btn:nth-of-type(2),
+//.hf-msg-btn-tools.hf-full-side .hf-btn:nth-of-type(2),
+//.hf-msg-btn-tools.hf-full-side button:nth-of-type(2) {
+//  margin-right: 0;
+//}
+//
+//.hf-msg-table > thead > tr > th,
+//.hf-msg-table > tbody > tr > th,
+//.hf-msg-table > tfoot > tr > th,
+//.hf-msg-table > thead > tr > td,
+//.hf-msg-table > tbody > tr > td,
+//.hf-msg-table > tfoot > tr > td {
+//  padding: .8rem;
+//}
+//.hf-msg-table a {
+//  cursor: pointer;
+//}
+//.hf-msg-table a:hover {
+//  text-decoration:none;
+//}
+//.hf-msg-detail {
+//  padding: 0;
+//  border: 1px solid #ccc;
+//  margin-bottom: 1rem;
+//}
+//.hf-msg-detail-hd,
+//.hf-msg-detail-bd,
+//.hf-msg-detail-footer {
+//  padding-left: 2rem;
+//  padding-right: 2rem;
+//}
+//.hf-msg-detail-hd {
+//  border-bottom: 1px solid #ccc;
+//}
+//.hf-msg-detail-title {
+//  margin-bottom: 0rem;
+//}
+//.hf-msg-detail-meta {
+//  text-align: right;
+//  color: #ccc;
+//  margin-bottom:.2rem;
+//}
+//.hf-msg-detail-meta > * {
+//  margin-left: 1rem;
+//}
+//.hf-msg-detail-meta > .fa + * {
+//  margin-left: .2rem;
+//}
+//.hf-msg-detail-bd {
+//  padding-top: 2rem;
+//  padding-bottom: 2rem;
+//
+//}
+//.hf-msg-detail-bd p{
+//  line-height: 1.7rem;
+//  /*s*/
+//  letter-spacing: .05rem;
+//}
+//.hf-msg-detail-footer {
+//  font-size: .7rem;
+//  padding-bottom: .5rem;
+//}
+//.hf-msg-form {
+//  padding-top: 2rem;
+//}

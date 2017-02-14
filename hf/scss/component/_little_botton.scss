@@ -1,0 +1,41 @@
+@charset "UTF-8";
+/* ==========================================================================
+   Component: Little Botton
+ ============================================================================ */
+.hf-little {
+  display: inline-block;
+  text-align: center;
+  width: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .2;
+  transition: all .3s;
+  &:hover, &:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .5;
+    outline: none;
+    transform: rotate(360deg);
+  }
+  [class*="fa-"] {
+    font-size: 1rem;
+  }
+}
+
+button.hf-little {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+
+a.hf-little:hover {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}

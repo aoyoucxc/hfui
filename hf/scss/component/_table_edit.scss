@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/* ==========================================================================
+   Component: Table Edit
+ ============================================================================ */
+.hf-table-edit {
+  input {
+    height: 2.125rem;
+    display: block;
+    width: 100%;
+    min-width: 50px;
+    padding: 0.5em;
+    margin: 0!important;
+    font-size: .8rem;
+    line-height: 1rem;
+    color: #555555;
+    vertical-align: middle;
+    background-color: #fff;
+    background-image: none;
+    border: none;
+    border-radius: 0;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    &[type="text"][disabled] {
+      background-color: $white!important;
+    }
+    &[type="radio"],
+    &[type="checkbox"] {
+      height: auto!important;
+      width: 15px!important;
+      min-width: 15px!important;
+    }
+    &:focus {
+      background-color: #fefffe;
+      border-color: #3bb4f2;
+      outline: 0;
+      box-shadow: 0 0 0 rgba(59, 180, 242, 0),
+      0 0 0 rgba(59, 180, 242, 0),
+      0 0 0 rgba(59, 180, 242, 0),
+      0 2px 2px rgba(59, 180, 242, 0.3);
+    }
+  }
+  .bootstrap-select button {
+    border: none;
+    .bs-caret{
+      display: none;
+    }
+  }
+  > tbody > tr.hf-edit input,
+  > tfoot > tr.hf-edit input,
+  > tbody > tr.hf-edit .bootstrap-select button,
+  > tfoot > tr.hf-edit .bootstrap-select button {
+    border-bottom: 1px solid #ccc;
+  }
+  > tbody > tr.hf-edit .bootstrap-select button,
+  > tfoot > tr.hf-edit .bootstrap-select button .bs-caret {
+    display: inline;
+  }
+}

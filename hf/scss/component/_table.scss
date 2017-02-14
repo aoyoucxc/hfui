@@ -1,0 +1,129 @@
+@charset "UTF-8";
+/* ==========================================================================
+   Component: Table
+ ============================================================================ */
+
+$tableCellFontSIze:                               .78rem !default;
+$tableCellPadding:                                12px 8px !default;
+$tableCellTextAlign:                              left !default;
+$tableBorderSize:                                 1px !default;
+$tableBorderType:                                 solid !default;
+$tableBorderColor:                                $bdColor !default;
+$tableBorder:                                     $tableBorderSize $tableBorderType $tableBorderColor !default;
+$tableRadius:                                     0px !default;
+$tableBg:                                         #f5f5f5 !default;
+$tableCr:                                         #83898D !default;
+$tablePd:                                         10px 8px !default;
+
+@mixin tableGen($place,$clazzs1,$clazzs2,$clazzs3,$clazzs4){
+  @each $item1 in $clazzs1 {
+    #{$item1} {
+      @each $item2 in $clazzs2 {
+        & > #{$item2} {
+          @each $item3 in $clazzs3 {
+            & > #{$item3} {
+              @each $item4 in $clazzs4 {
+                & > #{$item4} {
+                  @extend #{$place};
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.hf-table-box {
+  border: $tableBorder;
+  border-radius: $tableRadius;
+}
+%tableBaseCell {
+  font-size: $tableCellFontSIze;
+  vertical-align: middle;
+  padding: $tableCellPadding;
+  text-align: $tableCellTextAlign;
+  @include textEllipsis;
+}
+
+%tableThCell {
+  font-weight: 400;
+  padding: $tablePd;
+  background-color: $tableBg;
+  color: $tableCr;
+}
+
+%tableMoney {
+  text-align: right!important;
+}
+%tableSplit {
+  content: "|";
+  float: right;
+  display: inline-block;
+}
+%tableSplitText {
+  font-size: .78rem;
+  vertical-align: middle;
+  padding: 12px 8px !important;
+  text-align: center;
+}
+%tableSplitCenter {
+  text-align: center;
+}
+
+%tableBorderNone {
+  border-color: rgba(1,1,1,0)!important;
+}
+
+%tableCellTopLeftRadius {
+  border-top-left-radius: $tableRadius;
+}
+
+%tableCellTopRightRadius {
+  border-top-right-radius: $tableRadius;
+}
+
+%tableCellBottomLeftRadius {
+  border-bottom-left-radius: $tableRadius;
+}
+
+%tableCellBottomRightRadius {
+  border-bottom-right-radius: $tableRadius;
+}
+
+%tableCellBd {
+  border-top: 0;
+  border-bottom: 1px solid $tableBorderColor;
+}
+
+@include tableGen("%tableBaseCell",(".hf-table"),("thead","tbody","tfoot"),("tr"),("th","td"))
+
+@include tableGen("%tableThCell",(".hf-table"),("thead"),("tr"),("th"))
+
+@include tableGen("%tableMoney",(".hf-table"),("thead","tbody","tfoot"),("tr"),("td.hf-money","th.hf-money"))
+
+@include tableGen("%tableSplit",(".hf-table-split"),("thead","tbody","tfoot"),("tr"),("th:not(:last-child):after"))
+
+@include tableGen("%tableSplitText",(".hf-table-split"),("thead","tbody","tfoot"),("tr"),("th","td"))
+
+@include tableGen("%tableSplitCenter",(".hf-table-split"),("thead:first-child"),("tr:first-child"),("th"))
+
+@include tableGen("%tableBorderNone",(".hf-table-border-none"),("thead","tbody","tfoot"),("tr"),("th","td"))
+
+@include tableGen("%tableCellTopLeftRadius",(".hf-table"),("thead:first-child","tbody:first-child"),("tr:first-child"),("th:first-child","td:first-child"))
+
+@include tableGen("%tableCellTopRightRadius",(".hf-table"),("thead:first-child","tbody:first-child"),("tr:first-child"),("th:last-child","td:last-child"))
+
+@include tableGen("%tableCellBottomLeftRadius",(".hf-table"),("thead:last-child","tbody:last-child"),("tr:last-child"),("th:first-child","td:first-child"))
+
+@include tableGen("%tableCellBottomRightRadius",(".hf-table"),("thead:last-child","tbody:last-child"),("tr:last-child"),("th:last-child","td:last-child"))
+
+@include tableGen("%tableCellBd",(".hf-table"),("tbody","tfoot","thead"),("tr:not(:last-child)"),("th","td"))
+
+.hf-table{
+  margin-bottom: 0;
+  table-layout: fixed;
+}
+.hf-table-auto{
+  table-layout: auto;
+}

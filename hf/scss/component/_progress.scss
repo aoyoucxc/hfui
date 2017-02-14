@@ -1,0 +1,70 @@
+@charset "UTF-8";
+/* ==========================================================================
+   Component: Progress
+ ============================================================================ */
+$progressRadius:                  $noneRadius !default;
+$progressHeight:                  1.25rem !default;
+.hf-progress {
+  border-radius: $progressRadius;
+  height: 1.25rem;
+  margin-bottom: 1.25rem;
+  .progress-bar {
+    line-height: 150%;
+    font-size: .8rem;
+    min-width: 2em;
+  }
+  &-bg {
+    background-color: rgba(51,122,183,.3);
+  }
+  &-shadow {
+    -webkit-box-shadow:0 0 0 .625rem rgba(59,180,242,.1);
+    -moz-box-shadow:0 0 0 .625rem rgba(59,180,242,.1);
+    box-shadow:0 0 0 .625rem rgba(59,180,242,.1);
+  }
+  &-round {
+    border-radius: 1000px;
+    .progress-bar{
+      border-radius: 1000px;
+    }
+  }
+  &-sm {
+    height: .3125rem;
+  }
+  &-suit {
+    position: relative;
+    padding: 1.875rem 0;
+    > .hf-progress {
+      background-color: rgba(51,122,183,.3);
+      box-shadow:0 0 0 .625rem rgba(59,180,242,.1);
+      border-radius: 1000px 0 0 1000px;
+      margin-right: 5rem;
+    }
+    > .hf-progress-circle {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: auto;
+      background-color:  rgba(51,122,183,1);
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 5rem;
+      color: #fff;
+      font-size: 1.2rem;
+    }
+    &-sm {
+      padding: .9325rem 0;
+      > .hf-progress {
+        height: .625rem;
+        margin-right: 2.5rem;
+      }
+      > .hf-progress-circle {
+        width: 2.5rem;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        font-size: .8rem;
+      }
+    }
+  }
+}

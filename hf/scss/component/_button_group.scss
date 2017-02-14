@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/* ==========================================================================
+   Component: Button Group
+ ============================================================================ */
+$btnGroupRadius:    $noneRadius!default;
+.hf-btn-group {
+  border-radius: $btnGroupRadius;
+}
+@include clear(".hf-btn-toolbar");
+.hf-btn-toolbar {
+  margin-left: -5px;
+  &:before,
+  &:after {
+    display: table;
+  }
+  .hf-btn-group,
+  .hf-input-group {
+    float: left;
+  }
+  & > .hf-btn,
+  & > .hf-btn-group,
+  & > .hf-input-group {
+    margin-left: 5px;
+  }
+}

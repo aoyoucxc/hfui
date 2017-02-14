@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+.hf-circle {
+  $circleSize: 1.5rem !default;
+  $circleDftBg: #e4e4e4 !default;
+  $circleDftColor: #ffffff !default;
+  $circleItems: (
+          muted:$muted,primary:$primary,success:$success,info:$info,warning:$warning,danger:$danger,
+          deepinfo:$deepinfo,lightinfo:$lightinfo,dark:$white,light:$white
+  ) !default;
+  border-radius: 50%;
+  width: $circleSize;
+  height: $circleSize;
+  line-height: $circleSize;
+  background-color: $circleDftBg;
+  color: $circleDftColor;
+  overflow: hidden;
+  display:inline-block;
+  text-align: center;
+  @each $key,$value in $circleItems {
+    &-#{$key} {
+      @extend .hf-circle;
+      background-color: $value;
+    }
+  }
+  @include size(".hf-circle", .1 , 6 , (width:$circleSize,height:$circleSize,line-height:$circleSize) );
+}

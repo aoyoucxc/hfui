@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Component: Bootstrap Grid Exend BS网格系统扩展
+ ============================================================================ */
+@media only screen {
+  [class*="col-"] {
+    &.hf-col-sm-centered {
+      margin-left: auto;
+      margin-right: auto;
+      float: none;
+      &:last-child {
+        float: none;
+      }
+    }
+    &.hf-col-sm-uncentered {
+      margin-left: 0;
+      margin-right: 0;
+      float: left;
+      &:last-child {
+        float: left;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 641px) {
+  [class*="col-"] {
+    &.hf-col-md-centered {
+      margin-left: auto;
+      margin-right: auto;
+      float: none;
+      &:last-child {
+        float: none;
+      }
+    }
+    &.hf-col-md-uncentered {
+      margin-left: 0;
+      margin-right: 0;
+      float: left;
+      &:last-child {
+        float: left;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  [class*="col-"] {
+    &.hf-col-lg-centered {
+      margin-left: auto;
+      margin-right: auto;
+      float: none;
+      &:last-child {
+        float: none;
+      }
+    }
+    &.hf-col-lg-uncentered {
+      margin-left: 0;
+      margin-right: 0;
+      float: left;
+      &:last-child {
+        float: left;
+      }
+    }
+  }
+}

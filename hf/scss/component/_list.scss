@@ -1,0 +1,289 @@
+@charset "UTF-8";
+/* ==========================================================================
+   Component: List
+ ============================================================================ */
+.hf-list {
+  margin: 0;
+  padding: 0;
+  display: block;
+  > * {
+    position: relative;
+    display: block;
+    list-style: none;
+    padding: .5rem .5rem;
+    margin: 0;
+  }
+  &-left > * {
+    float: left;
+  }
+  &-right > * {
+    float: right;
+  }
+  &-inline {
+    > * {
+      display: inline-block;
+      %common {
+        width: 1.3rem;
+        display: inline-block;
+      }
+      &:after {
+        @extend %common;
+        content: "|";
+        text-align: right;
+      }
+      &:before {
+        @extend %common;
+        content: " ";
+      }
+    }
+    &.hf-list-right > *:first-child ,
+    &.hf-list-left > *:last-child {
+      padding-right: 0;
+      margin-right: 0;
+    }
+    &.hf-list-right > *:last-child ,
+    &.hf-list-left > *:first-child {
+      padding-left: 0;
+      margin-left: 0;
+    }
+    &.hf-list-right > *:first-child:after ,
+    &.hf-list-left > *:last-child:after ,
+    &.hf-list-right > *:last-child:before ,
+    &.hf-list-left > *:first-child:before {
+      width:0;
+    }
+    &.hf-list-right > *:first-child:after ,
+    &.hf-list-left > *:last-child:after {
+      content:" ";
+    }
+  }
+  &-kv {
+    > * {
+      display: block;
+      float: left;
+      &:nth-child(odd) {
+        clear: both;
+        text-align: right;
+        font-weight: bold;
+        width: 40%;
+      }
+      &:nth-child(even) {
+        text-align: left;
+        width: 60%;
+      }
+    }
+  }
+  &-avg {
+    display: block;
+    @include clearSpace();
+    list-style: none;
+    width: 100%;
+    > * {
+      display: block;
+      height: auto;
+      float: left;
+      clear: none;
+    }
+  }
+}
+
+@include clearByTable(".hf-list");
+@include clearByTable(".hf-list-avg");
+
+@mixin genListGrid(){
+  @for $var from 1 through 12 {
+    .hf-list-avg-#{$var} > * {
+      width: percentage(100 / ($var * 100) );
+      &:nth-of-type(#{$var}n + 1) {
+        clear: both;
+      }
+    }
+  }
+}
+@include genListGrid();
+
+
+.hf-list-kv-1> *:nth-child(odd) {
+  width: 10%;
+}
+
+.hf-list-kv-1> *:nth-child(even) {
+  width: 90%;
+}
+
+.hf-list-kv-2> *:nth-child(odd) {
+  width: 20%;
+}
+
+.hf-list-kv-2> *:nth-child(even) {
+  width: 80%;
+}
+
+.hf-list-kv-3> *:nth-child(odd) {
+  width: 30%;
+}
+
+.hf-list-kv-3> *:nth-child(even) {
+  width: 70%;
+}
+
+.hf-list-kv-4> *:nth-child(odd) {
+  width: 40%;
+}
+
+.hf-list-kv-4> *:nth-child(even) {
+  width: 60%;
+}
+
+.hf-list-kv-5> *:nth-child(odd) {
+  width: 50%;
+}
+
+.hf-list-kv-5> *:nth-child(even) {
+  width: 50%;
+}
+
+.hf-list-kv-6> *:nth-child(odd) {
+  width: 60%;
+}
+
+.hf-list-kv-6> *:nth-child(even) {
+  width: 40%;
+}
+
+.hf-list-kv-7> *:nth-child(odd) {
+  width: 70%;
+}
+
+.hf-list-kv-7> *:nth-child(even) {
+  width: 30%;
+}
+
+.hf-list-kv-8> *:nth-child(odd) {
+  width: 80%;
+}
+
+.hf-list-kv-8> *:nth-child(even) {
+  width: 20%;
+}
+
+.hf-list-kv-9> *:nth-child(odd) {
+  width: 90%;
+}
+
+.hf-list-kv-9> *:nth-child(even) {
+  width: 10%;
+}
+
+.hf-list-kv-text-left> *:nth-child(odd) {
+  text-align: left;
+}
+
+//.hf-list-avg-1 > * {
+//  width: 100%;
+//}
+//.hf-list-avg-1 > *:nth-of-type(n) {
+//  clear: none;
+//}
+//.hf-list-avg-1 > *:nth-of-type(1n + 1) {
+//  clear: both;
+//}
+//.hf-list-avg-2 > * {
+//  width: 50%;
+//}
+//.hf-list-avg-2 > *:nth-of-type(n) {
+//  clear: none;
+//}
+//.hf-list-avg-2 > *:nth-of-type(2n + 1) {
+//  clear: both;
+//}
+//.hf-list-avg-3 > * {
+//  width: 33.33333333%;
+//}
+//.hf-list-avg-3 > *:nth-of-type(n) {
+//  clear: none;
+//}
+//.hf-list-avg-3 > *:nth-of-type(3n + 1) {
+//  clear: both;
+//}
+//.hf-list-avg-4 > * {
+//  width: 25%;
+//}
+//.hf-list-avg-4 > *:nth-of-type(n) {
+//  clear: none;
+//}
+//.hf-list-avg-4 > *:nth-of-type(4n + 1) {
+//  clear: both;
+//}
+//.hf-list-avg-5 > * {
+//  width: 20%;
+//}
+//.hf-list-avg-5 > *:nth-of-type(n) {
+//  clear: none;
+//}
+//.hf-list-avg-5 > *:nth-of-type(5n + 1) {
+//  clear: both;
+//}
+//.hf-list-avg-6 > * {
+//  width: 16.66666667%;
+//}
+//.hf-list-avg-6 > *:nth-of-type(n) {
+//  clear: none;
+//}
+//.hf-list-avg-6 > *:nth-of-type(6n + 1) {
+//  clear: both;
+//}
+//.hf-list-avg-7 > * {
+//  width: 14.28571429%;
+//}
+//.hf-list-avg-7 > *:nth-of-type(n) {
+//  clear: none;
+//}
+//.hf-list-avg-7 > *:nth-of-type(7n + 1) {
+//  clear: both;
+//}
+//.hf-list-avg-8 > * {
+//  width: 12.5%;
+//}
+//.hf-list-avg-8 > *:nth-of-type(n) {
+//  clear: none;
+//}
+//.hf-list-avg-8 > *:nth-of-type(8n + 1) {
+//  clear: both;
+//}
+//.hf-list-avg-9 > * {
+//  width: 11.11111111%;
+//}
+//.hf-list-avg-9 > *:nth-of-type(n) {
+//  clear: none;
+//}
+//.hf-list-avg-9 > *:nth-of-type(9n + 1) {
+//  clear: both;
+//}
+//.hf-list-avg-10 > * {
+//  width: 10%;
+//}
+//.hf-list-avg-10 > *:nth-of-type(n) {
+//  clear: none;
+//}
+//.hf-list-avg-10 > *:nth-of-type(10n + 1) {
+//  clear: both;
+//}
+//.hf-list-avg-11 > * {
+//  width: 9.09090909%;
+//}
+//.hf-list-avg-11 > *:nth-of-type(n) {
+//  clear: none;
+//}
+//.hf-list-avg-11 > *:nth-of-type(11n + 1) {
+//  clear: both;
+//}
+//.hf-list-avg-12 > * {
+//  width: 8.33333333%;
+//}
+//.hf-list-avg-12 > *:nth-of-type(n) {
+//  clear: none;
+//}
+//.hf-list-avg-12 > *:nth-of-type(12n + 1) {
+//  clear: both;
+//}
