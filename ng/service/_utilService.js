@@ -522,15 +522,6 @@
        */
       var netUtl = {};
 
-      /**
-       * 是否是成功返回的结果,判断条件会肯句不同的系统有不同的变化,当前是根据CMS系统的接口协议判断的
-       * @param rst
-       * @return {*|boolean}
-       */
-      netUtl.isSucRst = function(rst){
-        return (rst && rst.data && rst.data.ret_code && (rst.data.ret_code + "") === "200");
-      };
-
       return {
         replaceAll:                           strUtl.replaceAll,
         startWith:                            strUtl.startWith,
