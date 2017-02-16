@@ -11,8 +11,11 @@
         params:      "=",
         // 是否显示加载遮幕
         showLoad:    "@",
+        // 是否显示背景和边框
         link:        "@",
+        // 是否改变按钮大小
         size:        "@",
+        // 是否改变按钮为圆角边框
         radius:      "@"
     };
     
@@ -25,7 +28,7 @@
                     text:           "@"
                 }),
                 replace = false,
-                template = '<hf-btn status="{{status}}" size="{{size}}" subject="{{subject}}" params="params" link="{{link}}" showLoad="{{showLoad}}">' +
+                template = '<hf-btn status="{{status}}" size="{{size}}" subject="{{subject}}" radius="{{radius}}" params="params" link="{{link}}" showLoad="{{showLoad}}">' +
                     '<span class="fa '+icon+'" ng-if="icon"></span>'+
                     ' '+
                     '<span ng-if="text">'+text+'</span>'+
@@ -52,8 +55,11 @@
                     'ng-transclude></button>',
                 link = function ($scope,$e,$attrs) {
 
-
                     $scope.link = $scope.link + "" === "true";
+                    $scope.radius = $scope.radius + "" === "true";
+                    if($scope.radius){
+                        $e.addClass("hf-btn-radius");
+                    }
 
                     var watchSize = $scope.$watch("size",function(oldVal,newVal){
                         if(newVal){
