@@ -1,12 +1,4 @@
-(function(factory){
-    if (typeof define === 'function' && define.amd)
-        define(['jquery'], factory);
-    else if (typeof exports === 'object')
-        factory(require('jquery'));
-    else
-        factory(jQuery);
-
-}(function($){
+;(function(){
     'use strict';
     var _h = {};
     _h.module = function(name,modual){
@@ -21,4 +13,4 @@
     };
     _h.options = {};
     window._h = _h;
-}));
+})();
