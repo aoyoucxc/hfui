@@ -68,3 +68,12 @@ $buttonItems:                           ".active",":active",".focus",":focus",":
     border-color: lighten(nth($value,3),30%);
   }
 }
+
+
+
+.hf-panel-hd{
+  .btn ,.hf-btn {
+    padding: .3rem 1.5rem;
+    font-size: .8rem;
+  }
+}

@@ -39,3 +39,16 @@ a.hf-little:hover {
   text-decoration: none;
   cursor: pointer;
 }
+
+.hf-panel-hd{
+  > .hf-little-group {
+    position: absolute;
+    right: .15rem;
+    top : 0;
+    > .hf-little {
+      width: 1.25rem;
+      line-height: 1.25rem;
+    }
+  }
+}
+

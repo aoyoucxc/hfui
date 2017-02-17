@@ -350,48 +350,6 @@ $formStates: (warning:$formWarning,error:$formDanger,success:$formSuccess,)!defa
     text-align: right;
   }
 }
-/* Inline form elements */
-//.hf-form-inline {
-//  .hf-form-group {
-//    display: inline-block;
-//    margin-bottom: 0;
-//    vertical-align: middle;
-//  }
-//  .hf-form-field {
-//    display: inline-block;
-//    width: auto;
-//    vertical-align: middle;
-//    height: 30px;
-//  }
-//  .hf-input-group {
-//    display: inline-table;
-//    vertical-align: middle;
-//    .hf-input-group-label,.hf-input-group-btn,.hf-form-label,.hf-form-suffix {
-//      width: auto;
-//    }
-//    > .hf-form-field {
-//      width: 100%;
-//    }
-//  }
-//  .hf-form-label ,
-//  .hf-form-suffix {
-//    margin-bottom: 0;
-//    vertical-align: middle;
-//  }
-//  .hf-radio,
-//  .hf-checkbox {
-//    display: inline-block;
-//    margin-top: 0;
-//    margin-bottom: 0;
-//    padding-left: 0;
-//    vertical-align: middle;
-//  }
-//  .hf-radio input[type="radio"],
-//  .hf-checkbox input[type="checkbox"] {
-//    float: none;
-//    margin-left: 0;
-//  }
-//}
 .hf-form-inline{
   .hf-form-group {
     display: inline-block;
@@ -741,5 +699,18 @@ $formInputSizes             : (
         cursor: default;
       }
     }
+  }
+}
+
+.hf-panel-hd{
+  $formHeader : "select,textarea,.btn,.hf-btn ,.hf-form-inline ,";
+  @each $item in $formHtml5InputTypes {
+    $formHeader : $formHeader + ' input[type="' + $item + '"],';
+  }
+  #{$formHeader} {
+    font-size: .7rem;
+  }
+  > .hf-form-inline {
+    float: right;
   }
 }

@@ -37,7 +37,7 @@
         var $current = function(){
             if($list.length > 0)
                 return $list[$list.length-1].handler;
-        };
+    };
 
         // 添加处理器
         var $$push = function(handle,config){
