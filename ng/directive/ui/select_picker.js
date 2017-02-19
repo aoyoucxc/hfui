@@ -286,6 +286,7 @@
 
                 // 初始化
                 var init = function(){
+                    $e.selectpicker('destroy');
                     $e.selectpicker({});
                     $e.selectpicker('refresh');
                     setVal(ngModelCtrl.$viewValue || '');
@@ -326,6 +327,7 @@
                 // 在事件应用场景中,建议使用$destroy,为一些资源进行销毁
                 $scope.$on("$destroy",function(){
                     $timeout.cancel(timer);
+                    $e.selectpicker('destroy');
                 });
             };
 

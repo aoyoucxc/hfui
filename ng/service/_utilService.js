@@ -562,9 +562,7 @@
         fmt_yyyyMMddhhmmssS:                  dateUtl.fmt_yyyyMMddhhmmssS,
         fmt_yyyyMMdd:                         dateUtl.fmt_yyyyMMdd,
         fmt:                                  dateUtl.fmt,
-        getNowTime:                           dateUtl.getNowTime,
-
-        isSucRst:                             netUtl.isSucRst
+        getNowTime:                           dateUtl.getNowTime
       };
     }])
   ;

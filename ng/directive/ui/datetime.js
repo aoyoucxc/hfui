@@ -359,6 +359,8 @@
                     watchShowClear();
                     watchShowClose();
                     watchKeepOpen();
+                    var dateTimePicker = $e.data('DateTimePicker');
+                    if(dateTimePicker) dateTimePicker.destroy();
                 });
             }
         ;
@@ -421,26 +423,9 @@
                             '<span class="hf-input-group-label add-on"><i class="icon-th fa fa-calendar"></i></span> '+
                         '</div>',
             link = function ($scope,$e,$attrs) {
-                var $target = $("<hf-datetime></hf-datetime>"),
-                    $source = $e;
+                var $target = $("<hf-datetime></hf-datetime>");
 
                 _directiveUtl.removeWrapAttr($attrs,$source,$target);
-                // _hf.eachMap($attrs.$attr,function (k,v) {
-                //     if(!_hf.startWith(v,"ng-") && !_hf.startWith(v,"hf-")){
-                //         // 保留属性
-                //         if(_hf.startWith(v,"w-")){
-                //             $source.attr(v.substring("w-".length),$attrs[k]);
-                //             $source.removeAttr(v);
-                //         }else if(_hf.startWith(v,"hng-")){
-                //             $target.attr(v.substring("h".length),$attrs[k]);
-                //             $source.removeAttr(v);
-                //         }
-                //         else{
-                //             $target.attr(v,$attrs[k]);
-                //             $source.removeAttr(v);
-                //         }
-                //     }
-                // });
 
                 $e.append($target);
                 var $ce = $compile($e.html())($scope.$parent);
